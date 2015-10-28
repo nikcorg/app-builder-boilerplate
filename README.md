@@ -16,13 +16,13 @@ Run `npm install` to fetch dependencies and to install git hooks. Git hooks are 
 
 Files are built with a version suffix into `/pub/`, e.g. `pub/bundle-1.0.0.js`.
 
-An app cache manifest file is also built. All files in `/pub` will be included in the files list.
+An AppCache Manifest file is also built. All files in `/pub` are included in the files list.
 
-## Bundled Deps
+## Bundled Dependencies
 
 - [debug](https://npmjs.com/package/debug)
 
-## Tools Used in the Build
+## Tools Used in the Build, i.e. DevDependencies
 
 All watch tasks make use of:
 
@@ -42,6 +42,6 @@ All watch tasks make use of:
 
 ### HTML and AppCache Manifest
 
-The strings `__VERSION__` and `__MANIFEST__` in the source are replaced with the version number and manifest file name from `package.json` respectively.
+For `/src/**/*.html` the strings `__VERSION__` and `__MANIFEST__` in the source are replaced with the version number and the manifest file name from `package.json` respectively.
 
-`find` and `sed` are used to compile the HTML and AppCache manifest.
+To compile the HTML and AppCache manifest, `find` and `sed` are used.
